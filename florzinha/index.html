@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saudação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Oi, Amor da minha vida! <br>isso é para você:</h1>
+    <a href="flor.html"><button >Clique aqui</button></a>
+    
+</body>
+
+
+
+
+
+<head>
+    <style>
+      @keyframes heart-fall {
+        0% { transform: translateY(-100%) translateX(0); }
+        50% { transform: translateY(50vh) translateX(50vw); }
+        100% { transform: translateY(100%) translateX(100vw); }
+      }
+  
+      body {
+        overflow: hidden;
+      }
+  
+      .heart {
+        position: absolute;
+        width: 0px;
+        height: 0px;
+        background-color: red;
+        top: 0px;
+        left: 0%;
+      }
+  
+      .heart::before,
+      .heart::after {
+        content: "";
+        position: absolute;
+        width: 52px;
+        height: 80px;
+        border-radius: 50px 50px 0 0;
+        background: rgb(255, 0, 0);
+      }
+  
+      .heart::before {
+        top: 50px;
+        left: 50px;
+        transform: rotate(-45deg);
+        transform-origin: 0 100%;
+      }
+  
+      .heart::after {
+        top: 50px;
+        left: 0px;
+        transform: rotate(45deg);
+        transform-origin: 100% 100%;
+      }
+  
+      .heart:nth-child(odd) {
+        animation: heart-fall 5s linear infinite;
+      }
+  
+      .heart:nth-child(even) {
+        animation: heart-fall 3s linear infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      for (let i = 0; i < 100; i++) {
+        let heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.style.left = Math.random() * 100 + '%';
+        heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+        heart.style.animationDelay = Math.random() * 2 + 's';
+        document.body.appendChild(heart);
+      }
+    </script>
+  </body>
+
+
+</html>
